@@ -26,8 +26,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '(p7p0#$^HHFGHHdggtherververvew
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = bool( os.environ.get('DJANGO_DEBUG', True))
+#DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True))
 
 
 ALLOWED_HOSTS = ['*']
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware',     # 추가
     'django.middleware.common.CommonMiddleware', # 추가
-    #'django.middleware.security.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
