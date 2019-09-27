@@ -20,10 +20,14 @@ BASE_DIR2 = os.path.dirname(os.path.dirname(os.path.abspath(BASE_DIR+"/django-re
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'rac9b-9tz2cl6%eq)4_ho32nz+4*yo7!r9sk6)zv+ba3t1#w_#'
+# SECRET_KEY = 'rac9b-9tz2cl6%eq)4_ho32nz+4*yo7!r9sk6)zv+ba3t1#w_#'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '(p7p0#$^HHFGHHdggtherververvewkjbnp3290vdvfd)w')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+
 
 ALLOWED_HOSTS = []
 
