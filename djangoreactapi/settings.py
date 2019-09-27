@@ -15,7 +15,7 @@ import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR2 = os.path.dirname(os.path.dirname(os.path.abspath(BASE_DIR+"/django-react/")))
+#BASE_DIR2 = os.path.dirname(os.path.dirname(os.path.abspath(BASE_DIR+"/django-react/")))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '(p7p0#$^HHFGHHdggtherververvew
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True))
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['weather-momamo.herokuapp.com']
 
 
 # Application definition
@@ -74,7 +74,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             # 추가된 부분입니다.
-            os.path.join(BASE_DIR2, 'frontend', 'build'),
+            os.path.join(BASE_DIR, 'build'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -139,6 +139,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = "whitenoise.django.GzipManifestStaticFilesStorage"
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -159,7 +161,7 @@ CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
 #)
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR2, 'frontend', 'build', 'static')
+    os.path.join(BASE_DIR, 'build', 'static')
 ]
 
 db_from_env = dj_database_url.config(conn_max_age=500)
