@@ -1,0 +1,67 @@
+.container {
+    display : flex;
+    align-items : center;
+    width : 100%;
+    padding-top : 0.3rem !important;
+    padding-bottom : 0.3rem !important;
+    font-weight : bold;
+
+}
+
+.logo {
+    flex : 1 1 15rem;
+    background-color: #78C5AE;
+    box-shadow : 2px 4px 6px #999;
+    height : 4rem;
+    text-align : center;
+    text-decoration: underline;
+    font-size : 1.5rem;
+    vertical-align : center;
+    color : #003E19;
+}
+
+.weather {
+    display : inline-block;
+    background-color: #028C6A;
+    box-shadow : 2px 4px 6px #999;
+    flex : 5 1 25rem;
+    height : 4rem;
+    color : #D1EDE1;
+}
+
+.time {
+    flex : 1 1 15rem;
+    background-color: #78C5AE;
+    box-shadow : 2px 4px 6px #999;
+    height : 4rem;
+    text-align : center;
+    color : #003E19;
+}
+
+#time_content {
+    font-size : 2rem;
+}
+#date_content {
+    font-size : 0.9rem;
+}
+.inner_box {
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    margin-left : 2.7rem !important;
+    margin-right : 2.7rem !important;
+    font-weight : bold;
+}
+
+
+img {
+    width: 4rem;
+    height: 4rem;
+    margin-right : 0.5rem;
+    vertical-align: middle;
+}
+
+.info {
+    background-color : orange;
+    color : #003E19;
+}
